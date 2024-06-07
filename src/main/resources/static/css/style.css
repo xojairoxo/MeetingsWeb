@@ -1,0 +1,25 @@
+.logo img{
+    border-radius: 50%;
+    margin-top: 10px;
+    height: 80px;
+    width: auto;
+}
+
+.header-footer {
+    background-color: lightblue;
+    color: white;
+    padding: 10px;
+    border: 50PX;
+    text-align: center;
+    font-family: cursive, sans-serif;
+    letter-spacing: 2px; /* Ajusta el espaciado entre letras */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+}
+.header div {
+    display: inline-block;
+    margin: 0 10px;
+}
+#loginlink {
+    text-decoration: none;
+    color: black;
+}
