@@ -32,7 +32,15 @@ public class Reuniones {
         if(id == null || id.isEmpty()){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
-        return userRepository.findContacsByUsuarioId(id);
+        return userRepository.findContacsByMeetingId(id);
+    }
+    @PostMapping("/crear-reunion")
+    public Meeting crearReunion(@RequestBody Meeting meeting) {
+        if(meeting == null){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+        userRepository.addMeeting(meeting);
+        return meeting;
     }
     @GetMapping("/contar-contactos")
     public Map<String, Integer> contarContactos(@RequestParam String id) {

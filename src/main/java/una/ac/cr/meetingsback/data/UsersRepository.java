@@ -51,14 +51,12 @@ public class UsersRepository {
         return r.getMeetings();
     }
 
-    public List<Contact> findContacsByUsuarioId(String id) {
-        List<Contact> result = new ArrayList<>();
-        for (Meeting m : this.findMeetingsByUsuarioId(id))
-            for (Contact c : m.getContacs())
-                if (!result.contains(c)) result.add(c);
-        return result;
+  public List<Contact> findContacsByMeetingId(String id) {
+        Meeting r = meetings.stream()
+                .filter(e -> e.getId().equals(id))
+                .findFirst().get();
+        return r.getContacs();
     }
-
     public Map<String, Integer> countContactsByMeeting(String userId) {
         Map<String, Integer> meetingContactsCount = new HashMap<>();
 
@@ -71,6 +69,10 @@ public class UsersRepository {
             meetingContactsCount.put(meeting.getId(), numberOfContacts);
         }
         return meetingContactsCount;
+    }
+    public Meeting addMeeting(Meeting meeting) {
+        meetings.add(meeting);
+        return meeting;
     }
 
     public Meeting findMeetingById(String id) {

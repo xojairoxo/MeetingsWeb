@@ -5,6 +5,7 @@
     <title>Meetings View</title>
     <link rel="stylesheet" href="/css/menu.css">
     <link rel="stylesheet" href="/css/style.css">
+
     <script src="/js/menu.js"> </script>
     <script src="controller.js"> </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -12,56 +13,45 @@
 </head>
 <body>
 <header class="header" id="menu"></header>
-<div class='container'>
-    <div id='bodyFiller' class="bodyFiller">
-        <p>List of meetings!!.</p>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-6'>
-                    <div class='col-12 text-centered cooper'>
-                        <input id="nombreBusqueda" type="text">
-                        <input id="search" class="boton" type="button" value="Buscar">
-                        <input id="new" class="boton" type="button" value="Crear">
+<div class="container">
+    <div class="container container-table">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>State</th>
+                                <th>Date</th>
+                                <th>Contact</th>
+                                <th><a href="#" id="add" > <img src="/images/addMeeting.png" alt="add Meeting logo"> </a> </th>
+                            </tr>
+                            </thead>
+                            <tbody id="list">
+                            <!-- Meeting list items will be rendered here -->
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-            </div>
-            <div class='row'>
-                <div class='col-12'>
-                    <hr>
-                </div>
-            </div>
-        <div class='row'>
-            <div class='col-6'>
-                <table class='container'>
-                    <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>State</th>
-                        <th>Date</th>
-                        <th>Contact</th>
-                        <th><img id="add" src="/images/addMeeting.png" alt="add Meeting logo"></th>
-                    </tr>
-                    </thead>
-                    <tbody class='container' id='list'>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-            <div class="row">
-                <div class="col-12">
-                    <table class="container">
-                        <thead>
-                           Meetings details
-                        </thead>
-                        <tbody id="details">
-
-                        </tbody>
-                    </table>
+                    <div class="col-md-6">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th colspan="2" class="details-header">Meeting Details</th>
+                            </tr>
+                            </thead>
+                            <tbody id="details">
+                            <!-- Meeting details will be rendered here -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
